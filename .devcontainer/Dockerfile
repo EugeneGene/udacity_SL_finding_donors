@@ -8,6 +8,9 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean -y
 
+# Install Git LFS
+RUN apt-get install -y git-lfs
+
 # Create a user for development
 ARG USERNAME=vscode
 ARG USER_UID=1000
