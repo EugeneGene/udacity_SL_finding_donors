@@ -61,6 +61,10 @@ def evaluate(results, accuracy, f1):
   
     # Create figure
     fig, ax = pl.subplots(2, 3, figsize = (11,7))
+    
+    # Increase vertical spacing between subplots
+    fig.subplots_adjust(hspace=0.75)  # REBEdit (Adjust as needed)
+
 
     # Constants
     bar_width = 0.3
@@ -110,7 +114,10 @@ def evaluate(results, accuracy, f1):
     patches = []
     for i, learner in enumerate(results.keys()):
         patches.append(mpatches.Patch(color = colors[i], label = learner))
-    pl.legend(handles = patches, bbox_to_anchor = (-.80, 2.53), \
+    # pl.legend(handles = patches, bbox_to_anchor = (-.80, 2.53), \
+    #            loc = 'upper center', borderaxespad = 0., ncol = 3, fontsize = 'x-large')
+    
+    pl.legend(handles = patches, bbox_to_anchor = (-0.80, 1.45), \       #REBEdit
                loc = 'upper center', borderaxespad = 0., ncol = 3, fontsize = 'x-large')
     
     # Aesthetics
